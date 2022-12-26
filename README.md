@@ -227,7 +227,7 @@ Spring Boot와 AWS로 웹 서비스 구현
         public class HelloController{
             @GetMapping("/hello")
             public  String hello(){
-                return "Hello World";
+                return "hello";
             }
         }
         ```
