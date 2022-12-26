@@ -25,7 +25,7 @@ Spring Boot와 AWS로 웹 서비스 구현
 
 3. Intellij Community(무료버전) 설치
 
-![Untitled2](https://user-images.githubusercontent.com/79856225/209473894-24eef8db-7887-4c6e-b42f-e4229713e332.png)
+    ![Untitled2](https://user-images.githubusercontent.com/79856225/209473894-24eef8db-7887-4c6e-b42f-e4229713e332.png)
 
 
 4. 최대 메모리 설정
