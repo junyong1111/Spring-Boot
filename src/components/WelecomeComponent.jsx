@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { createPostsComponent } from "./postsNavigate"
+import { createPostsNavi } from "../navigator/postsNavigate"
 
 export default function WelecomeComponent(){
 
@@ -10,7 +10,7 @@ export default function WelecomeComponent(){
             <h1>스프링 부트로 시작하는 웹 서비스</h1>
             <div>
                 <button className="btn btn-success" onClick={
-                    () => createPostsComponent(navigate)
+                    () => createPostsNavi(navigate)
                 }>글 등록</button>
             </div>
         </div>

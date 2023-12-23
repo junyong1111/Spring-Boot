@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createPostsComponent } from "./postsNavigate"
+import { createPostsNavi, deletePostsNavi, updatePostsNavi } from "../navigator/postsNavigate"
 import { useNavigate } from "react-router-dom"
 import { returnAllpostsApi } from "../api/PostsApiService"
 
@@ -16,7 +16,7 @@ export default function ListPostsComponent(){
         returnAllpostsApi()
         .then(
             (response) => {
-                console.log(response)
+                // console.log(response)
                 setPosts(response.data)
             }
         )
@@ -31,11 +31,12 @@ export default function ListPostsComponent(){
                 <table className="table">
                     <thead>
                             <tr>
-                                <th>작성자</th>
-                                <th>제목</th>
-                                <th>수정 날짜</th>
-                                <th>Delete</th>
-                                <th>Update</th>
+                                <th><center>게시글 번호</center></th>
+                                <th><center>작성자</center></th>
+                                <th><center>제목</center></th>
+                                <th><center>수정 날짜</center></th>
+                                <th><center>Delete</center></th>
+                                <th><center>Update</center></th>
                             </tr>
                     </thead>
                     <tbody>
@@ -43,11 +44,16 @@ export default function ListPostsComponent(){
                         posts.map(
                             post => (
                                 <tr key = {post.id}>
+                                    <td><center>{post.id}</center></td>
                                     <td><center>{post.author}</center></td>
                                     <td><center>{post.title}</center></td>
                                     <td><center>{new Intl.DateTimeFormat('ko-KR', options).format(new Date(post.modifiedDate))}</center></td>
-                                    <td><button className="btn btn-warning">삭제</button></td>
-                                    <td><button className="btn btn-success">수정</button></td>
+                                    <td><center><button className="btn btn-warning" onClick={
+                                        () => deletePostsNavi(navigator, post.id)
+                                    }>삭제</button></center></td>
+                                    <td><center><button className="btn btn-success" onClick={
+                                        () => updatePostsNavi(navigator, post.id)
+                                    }>수정</button></center></td>
                                 </tr>
                             )
                         )
@@ -58,7 +64,7 @@ export default function ListPostsComponent(){
             </div>
             <div>
                 <button className="btn btn-success" onClick={
-                    () => createPostsComponent(navigator)
+                    () => createPostsNavi(navigator)
                 }>게시글 등록</button>
             </div>
         </div>

@@ -20,4 +20,10 @@ export  const createPostsApi =
 
 // @GetMapping(value = "/api/v1/posts")
 export  const returnAllpostsApi = 
-() => apiClinet.get(`/api/v1/posts`)
+(posts) => apiClinet.get(`/api/v1/posts`, posts)
+
+export  const updatePostsApi = 
+(id, postsupdaterequestDto) => apiClinet.put(`/api/v1/posts/${id}`, postsupdaterequestDto)
+
+export  const deletePostsApi = 
+(id) => apiClinet.delete(`/api/v1/posts/${id}`)

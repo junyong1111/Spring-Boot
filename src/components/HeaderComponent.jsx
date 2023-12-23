@@ -1,13 +1,13 @@
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 function HeaderComponent() {
 
     // const authContext = useAuth()
     // const isAuthenticated = authContext.isAuthenticated
 
-    function logout() {
+    // function logout() {
         // authContext.logout()
-    }
+    // }
 
     return (
         
@@ -15,8 +15,8 @@ function HeaderComponent() {
             <div className="container">
                 <div className="row">
                     <nav className="navbar navbar-expand-lg">
-                        <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="https://github.com/junyong1111">Post List</a>
-                        {/* <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="/api/v1/posts">Post List</a> */}
+                        {/* <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="https://github.com/junyong1111">Post List</a> */}
+                        <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="/posts">Post List</a>
                         <div className="collapse navbar-collapse">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
