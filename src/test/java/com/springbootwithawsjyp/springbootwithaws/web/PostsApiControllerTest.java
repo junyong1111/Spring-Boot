@@ -61,7 +61,7 @@ public class PostsApiControllerTest {
         assertEquals(postsList.get(0).getAuthor(), author);
     }
     @Test
-    public void posts_업데이트() throws Exception{
+    public void post_업데이트() throws Exception{
         Posts savedPosts = postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
